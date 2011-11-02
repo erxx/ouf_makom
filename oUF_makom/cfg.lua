@@ -1,7 +1,3 @@
-  
-  -- // oUF tutorial layout
-  -- // zork - 2010
-  
   -----------------------------
   -- INIT
   -----------------------------
@@ -16,6 +12,14 @@
   -- CONFIG
   -----------------------------
   
+  cfg.hide = {
+	    blizzRaidFrame = true,
+	    blizzBuffFrame = true,
+	    blizzEnchantWeaponFrame = true,
+	    blizzMinimapInfight = true,
+	    blizzWatchFrameInfight = true,
+  }
+
   --config variables
   cfg.showplayer = true
   cfg.showtarget = true
