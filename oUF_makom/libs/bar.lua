@@ -4,6 +4,8 @@ local cfg = ns.cfg
 
 local lib = ns.lib
 
+local cast = ns.cast
+
 -----------------------------
 -- HEALTHBAR
 -----------------------------
@@ -274,16 +276,6 @@ lib.gen_castbar = function(f)
 		s:SetWidth(f.width-f.height-5)
 		s:SetPoint("BOTTOM",f,"TOP",0,5)
 	end
-	
-	
-	if s.interrupt then-- and UnitCanAttack("player", unit)
-		s:SetStatusBarColor(0.6,0.6,0.6,1)   --we want to recolor the statusbar in case the shield pops up
-		--f.Castbar.bg:SetVertexColor(0.2,0.2,0.2,0.7) --in case you have a background set
-	else
-		s:SetStatusBarColor(0.4,0.4,0.4)       --back to normal
-		--f.Castbar.bg:SetVertexColor(0.2,0.2,0,0.7)   --in case you have a background set
-	end
-
 
 	--helper
 	local h = CreateFrame("Frame", nil, s)
@@ -342,7 +334,9 @@ lib.gen_castbar = function(f)
 		z:SetPoint("BOTTOMRIGHT")
 		s.SafeZone = z
 	end
-
+	
+	s.PostCastStart = cast.PostCastStart
+	
 	f.Castbar = s
 	
 	if f.mystyle ~= "player" then
@@ -358,32 +352,6 @@ lib.gen_castbar = function(f)
 	--f.Castbar.Text = txt
 end
 -----------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -82,9 +82,12 @@
     self.Health:SetStatusBarColor(0.4,0.4,0.4)
     self.Health.bg.multiplier = 0.3
     self.Health.Smooth = true
+    
+    
     self.Power.colorClass = true
     self.Power.bg.multiplier = 0.3
     self.Power.Smooth = true
+    
   end  
   
   --the target style
@@ -104,6 +107,7 @@
     self.Power.bg.multiplier = 0.3
     self.Power.Smooth = true
     self.Castbar:SetAlpha(0.9)
+
   end  
   
   --the tot style
