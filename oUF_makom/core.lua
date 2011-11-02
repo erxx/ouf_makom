@@ -39,7 +39,6 @@
     lib.gen_pppercent(self,self.Power)
     lib.gen_curhp(self,self.Health)
     lib.gen_restingicon(self)
-    lib.gen_vengeancebar(self)
     lib.gen_castbar(self)
     lib.gen_swingbar(self)
     lib.gen_altpowerbar(self)
