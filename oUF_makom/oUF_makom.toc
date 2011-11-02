@@ -1,0 +1,19 @@
+## Interface: 40200
+## Author: makom
+## Title: oUF_|cFF0d87d5m|r|cFF3f6abda|r|cFF85419ck|r|cFFc81a7do|r|cFFf20269m|r
+## Notes: DfK-Crew
+## RequiredDeps: oUF
+## X-Category: UnitFrame
+
+##
+
+cfg.lua
+tags.lua
+libs\lib.lua
+libs\aura.lua
+libs\icon.lua
+libs\bar.lua
+oUF_Swing.lua
+vengeance.lua
+threatbar.lua
+core.lua
