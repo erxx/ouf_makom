@@ -274,6 +274,16 @@ lib.gen_castbar = function(f)
 		s:SetWidth(f.width-f.height-5)
 		s:SetPoint("BOTTOM",f,"TOP",0,5)
 	end
+	
+	
+	if s.interrupt then-- and UnitCanAttack("player", unit)
+		s:SetStatusBarColor(0.6,0.6,0.6,1)   --we want to recolor the statusbar in case the shield pops up
+		--f.Castbar.bg:SetVertexColor(0.2,0.2,0.2,0.7) --in case you have a background set
+	else
+		s:SetStatusBarColor(0.4,0.4,0.4)       --back to normal
+		--f.Castbar.bg:SetVertexColor(0.2,0.2,0,0.7)   --in case you have a background set
+	end
+
 
 	--helper
 	local h = CreateFrame("Frame", nil, s)
@@ -307,11 +317,6 @@ lib.gen_castbar = function(f)
 	end
 	i:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	--shield
-	local s1 = s:CreateTexture(nil, "OVERLAY")
-	s1:SetSize(100, 100)
-	s1:SetPoint("CENTER", Castbar)
-
 	--helper2 for icon
 	if f.mystyle ~= "player" then
 		local h2 = CreateFrame("Frame", nil, s)
@@ -344,7 +349,7 @@ lib.gen_castbar = function(f)
 		f.Castbar.Text = txt
 		f.Castbar.Icon = i
 		f.Castbar.Time = t
-		f.Castbar.Shield = s1
+		--f.Castbar.Shield = s1
 	else
 		f.Castbar.Icon = i
 	end
@@ -353,16 +358,8 @@ lib.gen_castbar = function(f)
 	--f.Castbar.Text = txt
 end
 -----------------------------
-checkShield = function(f,unit,...)
-	if f.Castbar.interrupt and UnitCanAttack("player", unit) then
-		f.Castbar:SetStatusBarColor(0.6,0.6,0.6,1)   --we want to recolor the statusbar in case the shield pops up
-		--f.Castbar.bg:SetVertexColor(0.2,0.2,0.2,0.7) --in case you have a background set
-	else
-		f.Castbar:SetStatusBarColor(0.4,0.4,0.4)       --back to normal
-		--f.Castbar.bg:SetVertexColor(0.2,0.2,0,0.7)   --in case you have a background set
-	end
-end
------------------------------
+
+
 
 
 

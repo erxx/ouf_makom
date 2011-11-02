@@ -103,8 +103,6 @@
     self.Power.colorClass = true
     self.Power.bg.multiplier = 0.3
     self.Power.Smooth = true
-    self.Castbar.PostCastStart = checkShield(self)
-    self.Castbar.PostChannelStart = checkShield(self)
     self.Castbar:SetAlpha(0.9)
   end  
   

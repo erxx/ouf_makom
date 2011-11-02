@@ -13,6 +13,7 @@ libs\lib.lua
 libs\aura.lua
 libs\icon.lua
 libs\bar.lua
+func\hide.lua
 oUF_Swing.lua
 vengeance.lua
 threatbar.lua
