@@ -6,6 +6,8 @@ local lib = ns.lib
 
 local cast = ns.cast
 
+local func = ns.func
+
 -----------------------------
 -- HEALTHBAR
 -----------------------------
@@ -36,7 +38,7 @@ lib.gen_hpbar = function(f)
 	h:SetFrameLevel(0)
 	h:SetPoint("TOPLEFT",-5,5)
 	h:SetPoint("BOTTOMRIGHT",5,-5)
-	lib.gen_backdrop(h)
+	func.gen_backdrop(h)
 	--bg
 	local b = s:CreateTexture(nil, "BACKGROUND")
 	b:SetTexture(1,0,0)
@@ -106,7 +108,7 @@ lib.gen_ppbar = function(f)
 	h:SetFrameLevel(0)
 	h:SetPoint("TOPLEFT",-5,5)
 	h:SetPoint("BOTTOMRIGHT",5,-5)
-	lib.gen_backdrop(h)
+	func.gen_backdrop(h)
 	--bg
 	local b = s:CreateTexture(nil, "BACKGROUND")
 	b:SetTexture(cfg.statusbar_texture)
@@ -132,7 +134,7 @@ lib.gen_emptybar = function(f)
 		h:SetFrameLevel(0)
   		h:SetPoint("TOPLEFT",-5,5)
   		h:SetPoint("BOTTOMRIGHT",5,-5)
-  		lib.gen_backdrop_thin(h)
+  		func.gen_backdrop_thin(h)
   		--bg
 		f.emptybar = s
 	elseif f.mystyle == "target" then
@@ -146,7 +148,7 @@ lib.gen_emptybar = function(f)
 		h:SetFrameLevel(0)
 		h:SetPoint("TOPLEFT",-5,5)
 		h:SetPoint("BOTTOMRIGHT",5,-5)
-		lib.gen_backdrop_thin(h)
+		func.gen_backdrop_thin(h)
 
 		h:SetAlpha(0)
 		f.emptybar = s
@@ -162,7 +164,7 @@ local h = CreateFrame("Frame", nil, s)
 h:SetFrameLevel(0)
 h:SetPoint("TOPLEFT",-5,5)
 h:SetPoint("BOTTOMRIGHT",5,-5)
-lib.gen_backdrop_thin(h)
+func.gen_backdrop_thin(h)
 
 --bg
 f.emptybar = s
@@ -189,7 +191,7 @@ lib.gen_emptybar2 = function(f)
 	  h:SetFrameLevel(0)
 	  h:SetPoint("TOPLEFT",-5,5)
 	  h:SetPoint("BOTTOMRIGHT",5,-5)
-	  lib.gen_backdrop_thin(h)
+	  func.gen_backdrop_thin(h)
 	  
 	  --bg
 	  f.emptybar2 = s
@@ -216,7 +218,7 @@ lib.gen_emptybar3 = function(f)
   h:SetFrameLevel(0)
   h:SetPoint("TOPLEFT",-5,5)
   h:SetPoint("BOTTOMRIGHT",5,-5)
-  lib.gen_backdrop_thin(h)
+  func.gen_backdrop_thin(h)
   
   --bg
   f.emptybar3 = s
@@ -245,7 +247,7 @@ local h = CreateFrame("Frame", nil, s)
 h:SetFrameLevel(0)
 h:SetPoint("TOPLEFT",-5,5)
 h:SetPoint("BOTTOMRIGHT",5,-5)
-lib.gen_backdrop_thin(h)
+func.gen_backdrop_thin(h)
 
 --bg
 f.infobar = s
@@ -282,7 +284,7 @@ lib.gen_castbar = function(f)
 	h:SetFrameLevel(0)
 	h:SetPoint("TOPLEFT",-5,5)
 	h:SetPoint("BOTTOMRIGHT",5,-5)
-	lib.gen_backdrop(h)
+	func.gen_backdrop(h)
 	
 	local b = s:CreateTexture(nil, "BACKGROUND")
 	b:SetTexture(cfg.statusbar_texture)
@@ -315,13 +317,13 @@ lib.gen_castbar = function(f)
 		h2:SetFrameLevel(0)
 		h2:SetPoint("TOPLEFT",i,"TOPLEFT",-5,5)
 		h2:SetPoint("BOTTOMRIGHT",i,"BOTTOMRIGHT",5,-5)
-		lib.gen_backdrop(h2)
+		func.gen_backdrop(h2)
 	else
 		local h2 = CreateFrame("Frame", nil, s)
 		h2:SetFrameLevel(0)
 		h2:SetPoint("TOPLEFT",i,"TOPLEFT",-5,5)
 		h2:SetPoint("BOTTOMRIGHT",i,"BOTTOMRIGHT",5,-5)
-		lib.gen_backdrop(h2)
+		func.gen_backdrop(h2)
 	end
 
 	if f.mystyle == "player" then

@@ -9,7 +9,8 @@
 
 cfg.lua
 tags.lua
-func\castbar.lua
+func\func.lua
+func\post.lua
 libs\lib.lua
 libs\aura.lua
 libs\icon.lua

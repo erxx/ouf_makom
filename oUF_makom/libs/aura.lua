@@ -4,6 +4,10 @@ local cfg = ns.cfg
 
 local lib = ns.lib
 
+local func = ns.func
+
+local auras = ns.auras
+
 --------------------------------
 --          DEBUFFS           --
 --------------------------------
@@ -21,7 +25,7 @@ lib.createDebuffs = function(f)
 		b.initialAnchor = "TOPLEFT"
 		b["growth-x"] = "RIGHT"
 		b["growth-y"] = "DOWN"	  
-		b.PostCreateIcon = lib.PostCreateIcon
+		b.PostCreateIcon = auras.PostCreateIcon
 		b:SetAlpha(0.7)
 		f.Debuffs = b
 	elseif f.mystyle == "player" then
@@ -35,7 +39,7 @@ lib.createDebuffs = function(f)
 		b.initialAnchor = "BOTTOMLEFT"
 		b["growth-x"] = "RIGHT"
 		b["growth-y"] = "UP"
-		b.PostCreateIcon = lib.PostCreateIcon
+		b.PostCreateIcon = auras.PostCreateIcon
 		f.Debuffs = b
 	elseif (f.mystyle == "tot" or f.mystyle == "focus") then
 		b.size = f.height
@@ -48,7 +52,7 @@ lib.createDebuffs = function(f)
 		b.initialAnchor = "BOTTOMLEFT"
 		b["growth-x"] = "RIGHT"
 		b["growth-y"] = "UP"
-		b.PostCreateIcon = lib.PostCreateIcon
+		b.PostCreateIcon = auras.PostCreateIcon
 		f.Debuffs = b
 	else
 		b.num = 8
@@ -60,7 +64,7 @@ lib.createDebuffs = function(f)
 		b.initialAnchor = "BOTTOMLEFT"
 		b["growth-x"] = "RIGHT"
 		b["growth-y"] = "UP"
-		b.PostCreateIcon = lib.PostCreateIcon
+		b.PostCreateIcon = auras.PostCreateIcon
 		f.Debuffs = b
 	end
 end
@@ -79,7 +83,7 @@ lib.createBuffs = function(f)
 	b.initialAnchor = "BOTTOMLEFT"
 	b["growth-x"] = "RIGHT"
 	b["growth-y"] = "UP"
-	b.PostCreateIcon = lib.PostCreateIcon
+	b.PostCreateIcon = auras.PostCreateIcon
 	if f.mystyle == "target" then
 		b.num = 28 
 	elseif f.mystyle == "player" then

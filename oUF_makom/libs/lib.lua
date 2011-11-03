@@ -3,39 +3,38 @@ local addon, ns = ...
 local cfg = ns.cfg
 
 local lib = CreateFrame("Frame")  
+
+local func = ns.func
+
+
+
+
+local taunts = {"I'm a button.", "Quit clicking me.", "That's enough.", "Stop it!", "I'm leaving!"};
+local widget = CreateFrame("Button", "TauntingButton", UIParent, "UIPanelButtonTemplate");
+widget:SetWidth(200); widget:SetHeight(24); widget:SetPoint("CENTER");
+widget:RegisterForClicks("AnyUp");
+widget:SetScript("OnClick", function (self, button, down)
+	self:SetID(1);
+	if taunts[self:GetID()] then
+	self:SetText(taunts[self:GetID()]);
+  CancelUnitBuff("player", "Schattenschutz");
+else
+self:Hide();
+end
+end);
+
+
+
+
+
+
+
+
+
+
+
   
-  
-  -----------------------------
-  -- FUNCTIONS
-  -----------------------------
-  
-  --backdrop table
-  local backdrop_tab = { 
-    bgFile = cfg.backdrop_texture, 
-    edgeFile = cfg.backdrop_edge_texture,
-    tile = false,
-    tileSize = 0, 
-    edgeSize = 5, 
-    insets = { 
-      left = 5, 
-      right = 5, 
-      top = 5, 
-      bottom = 5,
-    },
-  }
-  
-  --backdrop func
-  lib.gen_backdrop = function(f)
-    f:SetBackdrop(backdrop_tab);
-    f:SetBackdropColor(0,0,0,0.8)
-    f:SetBackdropBorderColor(0,0,0,1)
-  end
-  
-  lib.gen_backdrop_thin = function(f)
-    f:SetBackdrop(backdrop_tab);
-    f:SetBackdropColor(0,0,0,0.5)
-    f:SetBackdropBorderColor(0,0,0,0.7)
-  end
+
   
   lib.menu = function(self)
     local unit = self.unit:sub(1, -2)
@@ -114,7 +113,7 @@ lib.gen_vengeancebar = function(f)
     h:SetFrameLevel(0)
     h:SetPoint("TOPLEFT",-5,5)
     h:SetPoint("BOTTOMRIGHT",5,-5)
-    lib.gen_backdrop(h)
+    func.gen_backdrop(h)
     
    --bg
     local b = s:CreateTexture(nil, "BACKGROUND")
@@ -138,7 +137,7 @@ lib.gen_threatbar = function(f)
    h:SetFrameLevel(0)
    h:SetPoint("TOPLEFT",-5,5)
    h:SetPoint("BOTTOMRIGHT",5,-5)
-   lib.gen_backdrop(h)
+   func.gen_backdrop(h)
    --bg
    local b = s:CreateTexture(nil, "BACKGROUND")
    b:SetTexture(cfg.statusbar_texture)
@@ -161,7 +160,7 @@ lib.gen_altpowerbar = function(f)
 	h:SetFrameLevel(0)
 	h:SetPoint("TOPLEFT",-5,5)
 	h:SetPoint("BOTTOMRIGHT",5,-5)
-	lib.gen_backdrop(h)
+	func.gen_backdrop(h)
 	--bg
 	local b = s:CreateTexture(nil, "BACKGROUND")
 	b:SetTexture(cfg.statusbar_texture)
@@ -341,7 +340,7 @@ lib.gen_portrait = function(f)
       h:SetFrameLevel(0)
       h:SetPoint("TOPLEFT",-5,5)
       h:SetPoint("BOTTOMRIGHT",5,-5)
-      lib.gen_backdrop(h)
+      func.gen_backdrop(h)
   
       f.Portrait = p
 	
@@ -355,7 +354,7 @@ lib.gen_portrait = function(f)
       h:SetFrameLevel(0)
       h:SetPoint("TOPLEFT",-5,5)
       h:SetPoint("BOTTOMRIGHT",5,-5)
-      lib.gen_backdrop(h)
+      func.gen_backdrop(h)
   
       f.Portrait = p
 	  
@@ -371,34 +370,13 @@ lib.gen_portrait = function(f)
       h:SetFrameLevel(0)
       h:SetPoint("TOPLEFT",-5,5)
       h:SetPoint("BOTTOMRIGHT",5,-5)
-      lib.gen_backdrop(h)
+      func.gen_backdrop(h)
   
       f.Portrait = p
     end
   end
 ----------------------------- 
- 
-lib.PostCreateIcon = function(self, button)
-    button.cd:SetReverse()
-    button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-    button.icon:SetDrawLayer("BACKGROUND")
-    --count
-    button.count:ClearAllPoints()
-    button.count:SetJustifyH("RIGHT")
-    button.count:SetPoint("TOPRIGHT", 2, 2)
-    button.count:SetTextColor(0.7,0.7,0.7)
-    --helper
-    local h = CreateFrame("Frame", nil, button)
-    h:SetFrameLevel(0)
-    h:SetPoint("TOPLEFT",-5,5)
-    h:SetPoint("BOTTOMRIGHT",5,-5)
-    lib.gen_backdrop(h)
-  end
-  
 
-
-
-  
   -----------------------------
   -- HANDOVER
   -----------------------------
