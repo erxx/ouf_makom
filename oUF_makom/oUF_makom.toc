@@ -12,6 +12,7 @@ tags.lua
 func\func.lua
 func\post.lua
 libs\lib.lua
+libs\castbar.lua
 libs\aura.lua
 libs\icon.lua
 libs\bar.lua

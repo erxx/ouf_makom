@@ -31,6 +31,24 @@
   cfg.allow_frame_movement = true
   cfg.frames_locked = false
   
+    
+    -- Cast bars settings
+    cfg.focusCBuserplaced = true
+	cfg.focusCBposition = {"CENTER",UIParent,"BOTTOM",10,470}
+    cfg.focusCBwidth = 280
+    cfg.focusCBheight = 17
+    cfg.playerCBuserplaced = false
+	cfg.playerCBposition = {"CENTER",UIParent,"BOTTOM",10,320}
+    cfg.playerCBwidth = 210
+    cfg.playerCBheight = 17
+    cfg.targetCBuserplaced = false
+    cfg.targetCBposition = {"CENTER",UIParent,"BOTTOM",10,360}
+    cfg.targetCBwidth = 210
+    cfg.targetCBheight = 17
+    cfg.cbcolor = {0.3,0.45,0.65}
+ 	cfg.interruptcb = {1,0.49,0}
+    
+
   cfg.statusbar_texture = "Interface\\AddOns\\oUF_makom\\media\\statusbar512x64"
   cfg.backdrop_texture = "Interface\\AddOns\\oUF_makom\\media\\backdrop"
   cfg.backdrop_edge_texture = "Interface\\AddOns\\oUF_makom\\media\\backdrop_edge"

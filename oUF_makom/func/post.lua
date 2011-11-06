@@ -35,13 +35,6 @@ ns.auras = auras
 -----------------------------------
 local cast = CreateFrame("Frame")
 
-cast.PostCastStart = function(self, unit, name, rank, text)
-if UnitCanAttack("player", "target") and unit == "target" and self.interrupt then
-self:SetStatusBarColor(1, 0, 0, 0.7)
-else
-self:SetStatusBarColor(0.4,0.4,0.4,1)
-end
-end
 
 ns.cast = cast
 

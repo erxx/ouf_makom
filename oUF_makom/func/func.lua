@@ -30,7 +30,6 @@ f:SetBackdropColor(0,0,0,0.5)
 f:SetBackdropBorderColor(0,0,0,0.7)
 end
 
-
---TEST
+--Test
 
 ns.func = func
