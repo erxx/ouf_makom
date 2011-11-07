@@ -42,8 +42,14 @@
     lib.gen_castbar(self)
     lib.gen_swingbar(self)
     lib.gen_altpowerbar(self)
+    
+    --Panels
+	lib.gen_chatpanel(self)
+	lib.gen_bottomright(self)
+    
     lib.createBuffs(self)
     lib.createDebuffs(self)
+
     end
   
   local function genTargetStyle(self)
